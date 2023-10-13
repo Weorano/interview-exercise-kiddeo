@@ -1,0 +1,18 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block extrahead %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="add-marker">
+    <h1>Add Map Marker</h1>
+    <form method="post" action="">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+      <input type="submit" value="Save" class="default" name="_save">
+    </form>
+  </div>
+{% endblock %}

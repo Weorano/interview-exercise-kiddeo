@@ -11,6 +11,7 @@ class ProductAdmin(admin.ModelAdmin):
     model = MapMarker
     list_display = ('coordinates', 'product')
     change_list_template = 'admin/maps.html'
+    add_form_template = 'admin/add_marker.html'
 
     def changelist_view(
         self,
@@ -37,8 +38,8 @@ class ProductAdmin(admin.ModelAdmin):
         response.context_data['place_marks'] = place_marks_json
         return response
 
-    def has_add_permission(self, request):
+    def has_delete_permission(self, request, obj=None):
         return False
 
-    def has_delete_permission(self, request, obj=None):
+    def has_change_permission(self, request, obj=None):
         return False
