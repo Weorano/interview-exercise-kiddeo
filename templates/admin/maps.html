@@ -1,0 +1,12 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div id="map-markers" data-place-marks="{{ place_marks }}"></div>
+
+<script>
+    let mapMarkers = JSON.parse(document.getElementById("map-markers").getAttribute("data-place-marks"));
+    document.querySelector("#content > h1").style.display = "none";
+    console.log(mapMarkers)
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{% endblock %}
